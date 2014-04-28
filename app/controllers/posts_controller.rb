@@ -9,11 +9,19 @@ class PostsController < ApplicationController
   end
 
   def new
+  	@post = Post.new
 
   end
 
   def create
+  	@post = Post.new(post_params)
 
+  	if @post.save
+  		redirect_to posts_path
+  		flash[:notice] = "Post Created"
+  	else
+  		render "new"
+  	end
   end
 
   def edit
@@ -34,7 +42,7 @@ class PostsController < ApplicationController
 
 
   private 
-  def user params
-  	params.permit(:title, :content)
+  def post_params
+  	params.require(:post).permit(:title, :content)
   end
 end

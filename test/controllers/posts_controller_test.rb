@@ -7,12 +7,20 @@ setup do
 	@post2 = posts(:two)
 end
 
-	context "#index'" do
+	should "be able to view both posts on index" do
+		get :index
+		assert_response :success
+		assert_match "Second post content", response.body
+	end
 
-		should "be able to view both posts" do
-			get :index
-			assert_response :success
-			assert_match "Second post content", response.body
+	should "be able to view the #new page" do
+		get :new
+		assert_response :success
+	end
+	
+	should "be able to create a new post" do
+		assert_difference('Post.count') do
+			post :create, post:{ title:"1", content: "test" }
 		end
 	end
 
@@ -29,6 +37,8 @@ end
 		end
 
 	end
+
+
 
 
 end
