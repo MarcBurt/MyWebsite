@@ -24,6 +24,21 @@ end
 		end
 	end
 
+	should "display an error if title blank" do
+		assert_no_difference('Post.count') do
+			post :create, post:{ title:"", content: "content" }
+		end
+		assert_match "Title can&#39;t be blank", response.body
+	end
+
+	should "display an error if content blank" do
+		assert_no_difference('Post.count') do
+			post :create, post:{ title:"2", content: "" }
+		end
+		assert_match "Content can&#39;t be blank", response.body
+	end
+			
+
 	context "#show" do
 		setup do
 			get :show, id: @post1
