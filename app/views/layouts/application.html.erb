@@ -4,23 +4,39 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MyWebsiteBlog</title>
+  <title>Marc Burt | Ruby on Rails Developer</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
 </head>
 <body>
-	<div class="container" >
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container" >
+			<div class="navbar-link nav brand">
+    			<a href="/">Marc Burt</a>
+			</div>			
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Full Blog", posts_path %></li>
+				<li><a href="#">Link</a></li>
+			</ul>
+
+
+
+
+		</div>
+
+	</nav> 
+	<div class="container main"  >
 		<% flash.each do |type, message| %>
 			<div class="alert <%= flash_class type %>">
 				<button class="close" data-dismiss="alert">x</button>
 				<%= message %>
 			</div>
-
 		<% end %>
 		
 		<%= yield %>
+
 	</div>
 </body>
 </html>
