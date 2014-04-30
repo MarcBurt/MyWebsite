@@ -48,6 +48,10 @@ class PostsController < ApplicationController
     flash[:notice] = "Your post was deleted."
   end
 
+  def front
+    @post = Post.last
+  end
+
 
 
 

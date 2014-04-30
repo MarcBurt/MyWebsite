@@ -1,7 +1,10 @@
 MyWebsiteBlog::Application.routes.draw do
   
   resources :posts
-  root to:'posts#index'
+
+  get 'front', to: 'posts#front'
+
+  root to:'posts#front'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
