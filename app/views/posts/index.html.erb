@@ -4,6 +4,8 @@
 <% @posts.each do |post| %>
 	<h2> <%= link_to post.title, post %> </h2>
 	<p> <%= post.content %> </p>
+	<%= link_to "Edit", edit_post_path(post) %> |
+	<%= link_to "Delete", post, data: {confirm: "Are you sure you want to delete this post?"}, method: :delete %>
 	<hr>
 <% end %>
 

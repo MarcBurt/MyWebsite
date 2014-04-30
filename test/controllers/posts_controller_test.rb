@@ -53,6 +53,24 @@ end
 
 	end
 
+	should "be able to load the #edit page" do
+		get :edit, id: @post1
+		assert_response :success
+	end
+
+	should "be able to update a post" do
+		post :update, id: @post2, post: { title:"2", content:"updated post"}
+
+		assert_response :redirect
+		get :index
+		assert_match "updated post", response.body
+	end
+
+	should "be able to delete a post" do
+		post :destroy, id: @post1
+		assert_response :redirect
+		assert_no_match 'Second', response.body
+	end
 
 
 

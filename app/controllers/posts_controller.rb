@@ -25,23 +25,38 @@ class PostsController < ApplicationController
   end
 
   def edit
+    find_post
 
   end
 
   def update
-
+    find_post
+    if @post.update(post_params)
+      redirect_to posts_path
+      flash[:notice] = "Your post was updated."
+    else
+      render "edit"
+    end
   end
 
 
 
   def destroy
-
+    find_post
+    @post.delete
+    redirect_to posts_path
+    flash[:notice] = "Your post was deleted."
   end
 
 
 
 
   private 
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
+
   def post_params
   	params.require(:post).permit(:title, :content)
   end
