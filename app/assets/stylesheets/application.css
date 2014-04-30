@@ -11,22 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-
-.main {
-  padding-top: 40px
-}
-
-.brand  {
-  padding: 10px 10px;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  text-align: center;
-  margin: auto;
-  font-size: 24px;
-  color: 000px;
-}
-
-{ color: #000; text-decoration: none; }
-.brand a:visited { color: #000; text-decoration: none; }
