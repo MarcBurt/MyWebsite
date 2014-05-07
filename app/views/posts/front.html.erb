@@ -1,1 +1,6 @@
 Front Page!
+
+<h2>Latest Post:</h2>
+<h3><%= link_to @post.title, @post %><h3>
+<p><%= @post.content %></p>
+<%= link_to "Show", @post %>
