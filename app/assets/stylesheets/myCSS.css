@@ -13,4 +13,6 @@
   color: 000px;
 }
 
-.brand a:visited { color: #000; text-decoration: none; }
+.brand a:visited { 
+	color: #000; text-decoration: none;
+}

@@ -1,6 +1,7 @@
 MyWebsiteBlog::Application.routes.draw do
   
   resources :posts
+  resources :comments
 
   get 'front', to: 'posts#front'
 

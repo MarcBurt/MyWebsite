@@ -5,7 +5,12 @@ class PostsControllerTest < ActionController::TestCase
 setup do
 	@post1 = posts(:one)
 	@post2 = posts(:two)
+	@post1.comments[1] = Comment.new(content: "Comment for Post 1", post_id: 1)
 end
+
+	should "have a comment for @post1" do
+		assert @post1.comments.first
+	end
 
 	should "be able to view both posts on index" do
 		get :index
@@ -16,7 +21,7 @@ end
 	should "be able to view the #new page" do
 		get :new
 		assert_response :success
-	end
+	endgit
 	
 	should "be able to create a new post" do
 		assert_difference('Post.count') do
@@ -49,6 +54,10 @@ end
 
 		should "display posts title in URL" do
 			assert_match "First", request.url      #search for First in the URL
+		end
+
+		should "see comments for a post" do
+			assert_match "Comment for Post 1", response.body
 		end
 
 	end
