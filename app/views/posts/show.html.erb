@@ -8,6 +8,8 @@
 	<% @post.comments.each do |c| %>
 		<div class="comment">
 		<%= c.content  %>
+		<br><br>
+		<small> Comment was last updated <%= time_ago_in_words(c.updated_at)  %> ago </small>
 		<hr>
 		</div>
 	<% end %>

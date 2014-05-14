@@ -1,7 +1,7 @@
 MyWebsiteBlog::Application.routes.draw do
   
   resources :posts
-  resources :comments
+  resources :comments, only: [:new, :create, :edit, :update, :destroy]
 
   get 'front', to: 'posts#front'
 

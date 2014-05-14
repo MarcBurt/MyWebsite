@@ -3,7 +3,9 @@
 one:
   title: First Post
   content: First post content
+  id: 1
 
 two:
   title: 2nd Post
   content: Second post content
+  id: 2
