@@ -5,7 +5,7 @@ class PostsControllerTest < ActionController::TestCase
 setup do
 	@post1 = posts(:one)
 	@post2 = posts(:two)
-	@post1.comments[1] = Comment.new(content: "Comment for Post 1", post_id: 1)
+	@comment = comments(:one)
 end
 
 	should "have a comment for @post1" do
@@ -21,7 +21,7 @@ end
 	should "be able to view the #new page" do
 		get :new
 		assert_response :success
-	endgit
+	end
 	
 	should "be able to create a new post" do
 		assert_difference('Post.count') do
@@ -80,7 +80,5 @@ end
 		assert_response :redirect
 		assert_no_match 'Second', response.body
 	end
-
-
 
 end
