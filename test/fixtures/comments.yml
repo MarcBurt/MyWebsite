@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+one:
+  content: "Comment for Post 1"
+  post_id: 1
+
+two:
+  content: "Comment for Post 2"
+  post_id: 2
