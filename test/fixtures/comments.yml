@@ -4,7 +4,9 @@
 one:
   content: "Comment for Post 1"
   post_id: 1
+  id: 1
 
 two:
   content: "Comment for Post 2"
   post_id: 2
+  id: 2

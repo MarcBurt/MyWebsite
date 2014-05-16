@@ -3,5 +3,5 @@
 <p><%= @post.content %></p>
 <small>Post was created at <%= @post.created_at %>, last updated <%= time_ago_in_words(@post.updated_at)%> ago </small>
 <br>
-
+<h2>Post new comment:</h2>
 <%= render 'commentform' %> 
