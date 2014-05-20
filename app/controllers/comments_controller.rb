@@ -27,8 +27,8 @@ class CommentsController < ApplicationController
   	end
 
   	def edit
-  		@comment = Comment.find(params[:id])
-  		@post = Post.find(@comment[:post_id])
+  		@comment = Comment.find( params[:id] )
+  		@post = Post.find( @comment[:post_id] )
   		@hidden = @comment[:post_id]
   	end
 
@@ -40,6 +40,7 @@ class CommentsController < ApplicationController
         	redirect_to post_path(:id => @id) 
         	flash[:notice] = 'Your comment was updated.'
         else
+        	@post = Post.find( @id )
         	render action: 'edit', post_id: @id
         end
     end
