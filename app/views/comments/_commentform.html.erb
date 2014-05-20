@@ -13,7 +13,7 @@
   <% end %>
 
   <%= f.input :content, label: "Comment:" %>
-  <%= f.hidden_field :post_id, value: params[:id].to_i %>
+  <%= f.hidden_field :post_id, value: @hidden %> 
   
  
   <div class="form-actions">

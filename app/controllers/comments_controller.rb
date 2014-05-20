@@ -3,10 +3,12 @@ class CommentsController < ApplicationController
 	def new
 		@post = Post.find(params[:id])
 		@comment = Comment.new(post_id: params[:id])
+		@hidden = params[:id].to_i 
 	end
 
 	def create
 		@comment = Comment.new(comment_params)
+
 		if @comment.save
   			redirect_to post_path(:id => @comment[:post_id])
   			flash[:notice] = "Comment Added"
@@ -27,13 +29,15 @@ class CommentsController < ApplicationController
   	def edit
   		@comment = Comment.find(params[:id])
   		@post = Post.find(@comment[:post_id])
+  		@hidden = @comment[:post_id]
   	end
 
 
   	def update
   		@comment = Comment.find(params[:id])
+  		@id = @comment[:post_id]
         if @comment.update( comment_params )
-        	redirect_to post_path(:id => @comment[:post_id]) 
+        	redirect_to post_path(:id => @id) 
         	flash[:notice] = 'Your comment was updated.'
         else
         	render action: 'edit', post_id: @id
