@@ -6,6 +6,11 @@ MyWebsiteBlog::Application.routes.draw do
   get 'front', to: 'posts#front'
 
   root to:'posts#front'
+
+  match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
+  get "/signout" => "sessions#destroy", :as => :signout
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

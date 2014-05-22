@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass'
+
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-gplus'
+
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
