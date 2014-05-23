@@ -7,4 +7,6 @@
 	<hr>
 <% end %>
 
+<% if current_user && current_user[:admin] == true %>
 <%= link_to "New Post", new_post_path, class: "btn btn-primary btn-lg"%>
+<% end %>

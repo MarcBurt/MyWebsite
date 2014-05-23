@@ -4,11 +4,13 @@ class CommentsController < ApplicationController
 	def new
 		@post = Post.find(params[:id])
 		@comment = Comment.new(post_id: params[:id])
-		@hidden = params[:id].to_i 
+		@hiddenid = params[:id].to_i 
 	end
 
 	def create
 		@comment = Comment.new(comment_params)
+    @comment[:user_uid] = session[:user_uid]
+    @comment[:user_provider] = session[:user_provider]
 
 		if @comment.save
   			redirect_to post_path(:id => @comment[:post_id])
@@ -30,7 +32,7 @@ class CommentsController < ApplicationController
   	def edit
   		@comment = Comment.find( params[:id] )
   		@post = Post.find( @comment[:post_id] )
-  		@hidden = @comment[:post_id]
+  		@hiddenid = @comment[:post_id]
   	end
 
 

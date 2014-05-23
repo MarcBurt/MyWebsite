@@ -4,7 +4,7 @@ gem 'figaro'
 
 gem 'bootstrap-sass'
 
-gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-gplus'
