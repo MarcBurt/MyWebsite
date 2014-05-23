@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :logged_using_omniauth?
 
 	def new
 		@post = Post.find(params[:id])
@@ -52,6 +53,5 @@ class CommentsController < ApplicationController
   	def comment_params
   		params.require(:comment).permit(:content, :post_id)
   	end
-
 
 end
