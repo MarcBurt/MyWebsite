@@ -4,3 +4,4 @@ class ChangeCommentsContentFromStringToText < ActiveRecord::Migration
 
   end
 end
+

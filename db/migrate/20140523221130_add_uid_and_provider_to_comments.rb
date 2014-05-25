@@ -5,3 +5,4 @@ class AddUidAndProviderToComments < ActiveRecord::Migration
   	add_column :comments, :user_provider, :string
   end
 end
+

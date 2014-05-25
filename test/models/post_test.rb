@@ -4,3 +4,4 @@ class PostTest < ActiveSupport::TestCase
 	should have_many (:comments)
 
 end
+

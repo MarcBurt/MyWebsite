@@ -3,3 +3,4 @@ class SetDefaultAdminValue < ActiveRecord::Migration
   	change_column :users, :admin, :boolean, default: false
   end
 end
+

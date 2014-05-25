@@ -5,3 +5,4 @@ class AddPostIdToComments < ActiveRecord::Migration
   	add_index :comments, :post_id
   end
 end
+

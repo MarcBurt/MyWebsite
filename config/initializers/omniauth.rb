@@ -12,3 +12,4 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	OmniAuth.config.add_mock(:twitter, {provider: 'twitter', uid: '12345', info:{email: 'test@test.com'}})
 end
 
+
