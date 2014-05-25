@@ -1,12 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  provider: MyString
-  uid: MyString
-  name: MyString
 
-two:
-  provider: MyString
-  uid: MyString
-  name: MyString
+admin:
+  provider: "Facebook"
+  uid: "9876"
+  name: "admin"
+  admin: true
 
+user:
+  provider: "Facebook"
+  uid: "5432"
+  name: "User"
+  admin: false

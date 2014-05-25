@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
 	setup do
-		@post1 = Post.create(title: "post", content: "post content", id: 5)
+		@post1 = Post.create(title: "post", content: "post content", id: 5, )
 		 
 	end
 
@@ -45,6 +45,8 @@ class CommentsControllerTest < ActionController::TestCase
 			auth = request.env["omniauth.auth"]
 			user = User.create_with_omniauth(auth)
 			session[:user_id] = user.id
+		  session[:user_uid] = user[:uid]
+	   	session[:user_provider] = user[:provider]
 		end
 
 		should "be able to create a comment" do
@@ -57,7 +59,6 @@ class CommentsControllerTest < ActionController::TestCase
 			get :new, id: @post1[:id]
 			assert_response :success
 		end
-
 
 
 		should "be able to delete a comment" do

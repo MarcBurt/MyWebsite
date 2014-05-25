@@ -35,7 +35,6 @@ class CommentsController < ApplicationController
   		@hiddenid = @comment[:post_id]
   	end
 
-
   	def update
   		@comment = Comment.find(params[:id])
   		@id = @comment[:post_id]
