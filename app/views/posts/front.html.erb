@@ -1,13 +1,27 @@
-Front Page!
+<div class= "container-fluid row" > 
+  <p>  
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at eleifend turpis. Aliquam dictum ullamcorper malesuada. Morbi varius, elit a eleifend vehicula, ligula eros viverra nisi, a varius libero sapien sit amet nunc. Sed pellentesque tincidunt nulla. Cras vitae sagittis libero. In hac habitasse platea dictumst. Curabitur imperdiet ante vitae sapien consectetur, eget elementum augue sollicitudin.
+    <br><br>
+    Integer a lacus ac metus tempus rutrum non in nunc. In tincidunt mauris a malesuada viverra. Etiam lectus mi, luctus non semper id, volutpat sit amet magna. Praesent eros justo, feugiat eget dignissim a, varius quis ipsum. In mi mauris, porttitor tristique aliquam vel, vestibulum at nunc. Nulla tempor ligula at hendrerit pellentesque. Vestibulum luctus sit amet sem nec consectetur. In nec pharetra ipsum. Fusce vehicula, tortor ut ultrices luctus, tortor risus commodo ipsum, et semper nisi dolor vel lorem.
+ 
+  </p>
 
-<h2>Latest Post:</h2>
-<% if  @post %>
-	<h3><%= link_to @post.title, @post %></h3>
-	<p><%= @post.content %></p>
+</div> 
 
-	<%= link_to "Show", @post %>
-<% else %>
-	<h3>No Posts Yet!</h3>
-<% end %>
+<div class= "row">
+  <div id="front-post" class= "col-md-6">
+  <h3>Latest Blog Post:</h2>
+    <% if  @post %>
+    	<h4><%= link_to @post.title, @post %></h4>
+    	<p><%= truncate(@post.content, length: 1000) %></p>
+    	<%= link_to "Show", @post %>
+    <% else %>
+    	<h3>No Posts Yet!</h3>
+    <% end %>
+  </div>
 
-
+  <div class= "col-md-6">
+    <%= image_tag("Profile-Pic.png", class: "img-responsive img-rounded front-pic pull-right") %>
+   
+  </div>
+</div

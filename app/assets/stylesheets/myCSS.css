@@ -1,6 +1,27 @@
-.main {
-  padding-top: 60px
+html, body {
+   height: 100%;
+   width: auto;
+   margin: auto;
+   padding: 0;
 }
+
+.wrapper {
+  color: white;
+  background: black;
+  min-height: 100%;
+}
+
+.navbar-inner {
+  background: white;
+
+}
+
+.main {
+  padding: 80px 80px 0px;
+  margin: 0% 5% 0% 5%;
+
+}
+
 
 .brand  {
   padding: 10px 10px;
@@ -16,3 +37,23 @@
 .brand a:visited {
 	color: #000; text-decoration: none;
 }
+
+
+#front-post {
+  padding: 20px 10px;
+
+
+}
+
+.front-pic {
+  padding: 20px;
+  max-height: 450px;
+}
+
+textarea, input {
+  background: black;
+  color: white;
+  height: auto;
+  width: 80%;
+}
+
