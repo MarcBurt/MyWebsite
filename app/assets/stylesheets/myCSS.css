@@ -57,3 +57,6 @@ textarea, input {
   width: 80%;
 }
 
+small {
+  color: lightgrey;
+}

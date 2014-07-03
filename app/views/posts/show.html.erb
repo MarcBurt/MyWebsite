@@ -1,5 +1,5 @@
 <h1> <%= @post.title %> </h1>
-<p><%= @post.content %></p>
+<p><%= @post.content.html_safe %></p>
 <small>Post was created at <%= @post.created_at %>, last updated <%= time_ago_in_words(@post.updated_at)%> ago </small>
 <br>
 <% if current_user && current_user[:admin] == true %> 
@@ -15,8 +15,7 @@
 <% if @post.comments.first != nil  %>
 	<% @post.comments.each do |c| %>
 		<div class="comment">
-			<%= c.content  %>
-			<br><br>
+			<%= c.content.html_safe  %>
 			<small> Comment was last updated <%= time_ago_in_words(c.updated_at)  %> ago </small>
 			<br>
 

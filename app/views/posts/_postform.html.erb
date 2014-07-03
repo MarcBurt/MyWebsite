@@ -13,7 +13,8 @@
   <% end %>
 
   <%= f.input :title, label: "Title" %>
-  <%= f.input :content, label: "Content", input_html: {rows: "20"} %>
+  <%= f.input :content, label: "Content", input_html: {rows: "20", class: "tinymce"} %>
+  <%= tinymce %>
  
   <div class="form-actions">
     <%= f.button :submit %>

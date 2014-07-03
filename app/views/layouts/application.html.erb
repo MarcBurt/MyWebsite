@@ -11,52 +11,52 @@
 
 </head>
 <body>
-	<div class="wrapper">
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container" >
-				<div class="navbar-link nav brand">
-	    			<a href="/">Marc Burt</a>
-				</div>			
-				<ul class="nav navbar-nav">
-					<li><%= link_to "Full Blog", posts_path %></li>
-					<li><a href="#">Link</a></li>
+<div class="wrapper">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container" >
+			<div class="navbar-link nav brand">
+    			<a href="/">Marc Burt</a>
+			</div>			
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Full Blog", posts_path %></li>
+				<li><a href="#">Link</a></li>
+			</ul>
+
+			<% if current_user %>
+				<ul class="nav navbar-nav navbar-right">
+					<li> <%= link_to "Sign Out", logout_path %> </li>
 				</ul>
+				<p class="navbar-text navbar-right"> Signed in as: 	<%= current_user.name %> </p>
+			<% else %>
+				<ul class='nav navbar-nav navbar-right'>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Log in <b class="caret"></b></a>
+						<ul class="dropdown-menu" >
+							<li><%= link_to 'Log in with Facebook', "/auth/facebook" %></li>	
+							<li><%= link_to 'Log in with LinkedIn', "/auth/linkedin" %></li>	
+							<li><%= link_to 'Log in with GitHub', "/auth/github" %></li>	
+							<li><%= link_to 'Log in with Google+', "/auth/gplus" %></li>	
+						</ul>
+					</li>
+				</ul>
+			<% end %>
 
-				<% if current_user %>
-					<ul class="nav navbar-nav navbar-right">
-						<li> <%= link_to "Sign Out", logout_path %> </li>
-					</ul>
-					<p class="navbar-text navbar-right"> Signed in as: 	<%= current_user.name %> </p>
-				<% else %>
-					<ul class='nav navbar-nav navbar-right'>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Log in <b class="caret"></b></a>
-							<ul class="dropdown-menu" >
-								<li><%= link_to 'Log in with Facebook', "/auth/facebook" %></li>	
-								<li><%= link_to 'Log in with LinkedIn', "/auth/linkedin" %></li>	
-								<li><%= link_to 'Log in with GitHub', "/auth/github" %></li>	
-								<li><%= link_to 'Log in with Google+', "/auth/gplus" %></li>	
-							</ul>
-						</li>
-					</ul>
-				<% end %>
+		</div>
 
-			</div>
-
-		</nav> 
-		<div class= "background"> 
-			<div class="container main"  >
-				<% flash.each do |type, message| %>
-					<div class="alert <%= flash_class type %>">
-						<button class="close" data-dismiss="alert">x</button>
-						<%= message %>
-					</div>
-				<% end %>
-				
-				<%= yield %>
-			</div>
+	</nav> 
+	<div class= "background"> 
+		<div class="container main"  >
+			<% flash.each do |type, message| %>
+				<div class="alert <%= flash_class type %>">
+					<button class="close" data-dismiss="alert">x</button>
+					<%= message %>
+				</div>
+			<% end %>
+			
+			<%= yield %>
 		</div>
 	</div>
+</div>
 </body>
 </html>
 

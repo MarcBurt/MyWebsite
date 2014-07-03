@@ -1,5 +1,6 @@
 <h1> <%= @post.title %> </h1>
-<p><%= @post.content %></p>
+<p><%= @post.content.html_safe %></p>
+<br>
 <small>Post was created at <%= @post.created_at %>, last updated <%= time_ago_in_words(@post.updated_at)%> ago </small>
 <br>
 <h2>Edit comment:</h2>
