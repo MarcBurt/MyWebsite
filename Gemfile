@@ -11,11 +11,14 @@ gem 'omniauth-gplus'
 
 gem 'simple_form'
 
+gem "html_truncator"
+
 gem 'tinymce-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
 # Use sqlite3 as the database for Active Record
+
 gem 'sqlite3'
 
 # Use SCSS for stylesheets

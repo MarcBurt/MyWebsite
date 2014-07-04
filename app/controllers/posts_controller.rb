@@ -1,4 +1,7 @@
+require "html_truncator"
+
 class PostsController < ApplicationController
+
   before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -51,6 +54,7 @@ class PostsController < ApplicationController
 
   def front
     @post = Post.last
+    @safe_content = HTML_Truncator.truncate(@post.content, 130)
   end
 
 
