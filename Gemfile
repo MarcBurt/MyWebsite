@@ -12,6 +12,7 @@ gem 'omniauth-gplus'
 gem 'simple_form'
 
 gem "html_truncator"
+gem 'will_paginate', '~> 3.0.5'
 
 gem 'tinymce-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

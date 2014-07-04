@@ -5,8 +5,7 @@ class PostsController < ApplicationController
   before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-  	@posts = Post.all 
-    @posts.reverse!
+    @posts = Post.paginate(:page => params[:page], per_page: 2, order: 'created_at DESC')
   end
 
   def show
