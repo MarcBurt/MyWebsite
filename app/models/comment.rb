@@ -2,12 +2,10 @@ class Comment < ActiveRecord::Base
 
 
 	belongs_to :post
+  belongs_to :user
 
 	validates :content, presence: true
 	validates :post_id, presence: true
-	validates :user_uid, presence: true
-	validates :user_provider, presence: true
-
 
 end
 

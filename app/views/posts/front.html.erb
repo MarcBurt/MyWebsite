@@ -14,7 +14,7 @@
     <% if  @post %>
     	<h4><%= link_to @post.title, @post %></h4>
     	<p><%= @safe_content.html_safe %>
-    	<%= link_to "Show", @post %>
+    	<%= link_to "Show Full Post", @post %>
     <% else %>
     	<h3>No Posts Yet!</h3>
     <% end %>

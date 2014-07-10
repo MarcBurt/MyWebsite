@@ -9,8 +9,7 @@ class CommentsController < ApplicationController
 
 	def create
 		@comment = Comment.new(comment_params)
-    @comment[:user_uid] = session[:user_uid]
-    @comment[:user_provider] = session[:user_provider]
+    @comment[:user_id] = session[:user_uid]
 
 		if @comment.save
   			redirect_to post_path(:id => @comment[:post_id])

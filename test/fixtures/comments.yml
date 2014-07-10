@@ -5,8 +5,7 @@ one:
   content: "Comment for Post 1"
   post_id: 1
   id: 1
-  user_uid: "111"
-  user_provider: "twitter"
+  user_id: "111"
 
 
 two:

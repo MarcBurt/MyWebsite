@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 		@auth = request.env["omniauth.auth"]
 		@user = User.find_by(provider: @auth["provider"], uid: @auth["uid"]) || User.create_with_omniauth(@auth)
 		set_name 
+		set_image
 		set_session
 		set_admin if @auth[:info][:email] == 'marc.burt@gmail.com' # hard coded admin to owners email
 		redirect_to root_url
@@ -34,6 +35,15 @@ end
 			else
 				@user[:name] = @user[:uid] #set to provider UID otherwise
 			end
+		end
+		@user.save
+	end
+
+	def set_image
+		if @auth[:info][:image]
+			@user[:image] = @auth[:info][:image]
+		else 
+			@user[:image] = "image not set!"
 		end
 		@user.save
 	end
