@@ -2,10 +2,10 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
 	OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-	provider :facebook, ENV['facebook_key'], ENV['facebook_secret']
+	provider :facebook, ENV['facebook_key'], ENV['facebook_secret'], secure_image_url: true
 	provider :linkedin, ENV['linkedin_key'] , ENV['linkedin_secret'] 
 	provider :github, ENV['github_key'] , ENV['github_secret'], scope: "user"
-	provider :gplus, ENV['gplus_key'] , ENV['gplus_secret']
+	provider :gplus, ENV['gplus_key'] , ENV['gplus_secret'], scope: "userinfo.email, userinfo.profile"
 
 	#OmniAuth.config.test_mode = true #turns test mode - auto authorizr the mock user on or off
 

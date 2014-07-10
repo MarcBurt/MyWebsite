@@ -11,6 +11,9 @@ gem 'omniauth-gplus'
 
 gem 'simple_form'
 
+gem "paperclip", "~> 4.1"
+
+
 gem "html_truncator"
 gem 'will_paginate', '~> 3.0.5'
 

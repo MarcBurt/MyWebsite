@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   has_many :comments
+  has_attached_file :avatar, :styles => {:thumb => "50x50>" }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 	def self.create_with_omniauth(auth)
 		create! do |user|
@@ -9,6 +11,9 @@ class User < ActiveRecord::Base
 		end
 	end
 
+  def avatar_from_url(url)
+    self.avatar = URI.parse(url)
+  end
 	
 end
 
