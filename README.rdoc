@@ -1,4 +1,6 @@
 == README
 
 This is my work-in-progress personal website and blog I'm creating to assist in learning ROR.
-I'm using Rails 4.0.3, and intend to use Bootstrap for the front end.
+I'm using Rails 4.0.3, and Bootstrap for the front end.
+
+My aim is just to get a functional blog running, there are many features I could add but do not think they are necessary in such a small blog.

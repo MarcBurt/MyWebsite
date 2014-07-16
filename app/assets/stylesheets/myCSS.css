@@ -60,3 +60,11 @@ textarea, input {
 small {
   color: lightgrey;
 }
+
+.commenter-avatar {
+  padding: 10px;
+}
+
+.contact_me {
+  text-align: center;
+}

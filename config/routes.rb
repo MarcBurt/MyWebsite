@@ -4,6 +4,7 @@ MyWebsiteBlog::Application.routes.draw do
   resources :comments, only: [:new, :create, :edit, :update, :destroy]
 
   get 'front', to: 'posts#front'
+  get 'contact', to: 'posts#contact'
 
   root to:'posts#front'
 

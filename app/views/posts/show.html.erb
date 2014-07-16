@@ -21,13 +21,13 @@
 			<br>
 
 			
-			<div class= "col-md-1 commenter-image">
+			<div class= "col-md-1 commenter-avatar">
 				<%= image_tag(c.user.avatar.url(:thumb)) %>
 				<%= c.user.name %>
 				
 			</div>
 
-			<div id="comments" class= "col-md-11">
+		<div id="comments" class= "col-md-11">
 			<div class="comment">
 				<%= c.content.html_safe  %>
 				<small> Comment was last updated <%= time_ago_in_words(c.updated_at)  %> ago </small>

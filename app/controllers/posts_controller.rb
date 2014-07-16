@@ -31,7 +31,6 @@ class PostsController < ApplicationController
 
   def edit
     find_post
-
   end
 
   def update
@@ -56,7 +55,8 @@ class PostsController < ApplicationController
     @safe_content = HTML_Truncator.truncate(@post.content, 130)
   end
 
-
+  def contact #possibly move to new controller sometime with front
+  end
 
 
   private 
