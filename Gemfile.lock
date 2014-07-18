@@ -70,8 +70,6 @@ GEM
     multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nokogiri (1.6.2.1)
-      mini_portile (= 0.6.0)
     nokogiri (1.6.2.1-x64-mingw32)
       mini_portile (= 0.6.0)
     oauth (0.4.7)
@@ -106,6 +104,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    pg (0.17.1-x64-mingw32)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -153,7 +152,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.9)
     sqlite3 (1.3.9-x64-mingw32)
     thor (0.19.1)
     thread_safe (0.3.3)
@@ -186,6 +184,7 @@ DEPENDENCIES
   omniauth-gplus
   omniauth-linkedin
   paperclip (~> 4.1)
+  pg
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)
   sdoc
