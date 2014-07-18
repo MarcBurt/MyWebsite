@@ -68,3 +68,26 @@ small {
 .contact_me {
   text-align: center;
 }
+
+.log-in-image {
+  max-width: 100px;
+  display: inline;
+  margin: 20px;
+  
+}
+
+.log-in a {
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: inherit;
+  font-size: 250%;
+  text-align: center;
+
+}
+
+.signed-in {
+  padding-right: 15px;
+}
+
+button {position: relative; z-index: 100000; }
