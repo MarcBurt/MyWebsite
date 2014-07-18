@@ -1,5 +1,6 @@
-<%= link_to "New Post", new_post_path, class: "btn btn-primary btn-lg"%>
-
+<% if current_user && current_user[:admin]  %>
+  <%= link_to "New Post", new_post_path, class: "btn btn-primary btn-lg"%>
+<% end %>
 <% @posts.each do |post| %>
 	<h2> <%= link_to post.title, post %> </h2>
 	<p> <%= post.content.html_safe %> </p>
