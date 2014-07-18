@@ -4,3 +4,5 @@ This is my work-in-progress personal website and blog I'm creating to assist in 
 I'm using Rails 4.0.3, and Bootstrap for the front end.
 
 My aim is just to get a functional blog running, there are many features I could add but do not think they are necessary in such a small blog.
+
+Website currently live at http://website-blog.herokuapp.com/
