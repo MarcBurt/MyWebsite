@@ -15,7 +15,6 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
-
   end
 
   def create
@@ -27,6 +26,7 @@ class PostsController < ApplicationController
   	else
   		render "new"
   	end
+    
   end
 
   def edit
