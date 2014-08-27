@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	end
 
   def avatar_from_url(url)
-    self.avatar = open(url)
+    self.avatar = URI.parse(url)
   end
 	
 end
