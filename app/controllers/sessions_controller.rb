@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
 		@auth = request.env["omniauth.auth"]
 		@user = User.find_by(provider: @auth["provider"], uid: @auth["uid"]) || User.create_with_omniauth(@auth)
 		set_name 
-		# @user.avatar_from_url(@auth[:info][:image]) 
-		puts @auth[:info][:image]
+		@user.avatar_from_url(@auth[:info][:image]) 
+		puts @auth[:info][:image] #testing
 		set_session
 		set_admin if @auth[:info][:email] == 'marc.burt@gmail.com' # hard coded admin to owners email
 		redirect_to root_url # change in future
